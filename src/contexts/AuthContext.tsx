@@ -3,12 +3,12 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
 
-// Define what a "user" looks like in your app
+// 
 interface User {
   id: string;
   name: string;
   email: string;
-  // Add more fields if needed, like role, avatar, etc.
+  role: 'admin' | 'employee' | 'super-admin'; 
 }
 
 interface AuthContextType {
