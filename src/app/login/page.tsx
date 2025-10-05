@@ -2,9 +2,9 @@
 
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { loginSchema, type LoginFormData } from '@/schemas/auth'
-import { useAuth } from '@/contexts/AuthContext'
-import { mockLogin } from '@/lib/mockApi'
+import { loginSchema, type LoginFormData } from '../../schemas/auth'
+import { useAuth } from '../../contexts/AuthContext'
+import { mockLogin } from '../../lib/mockApi'
 import { useRouter } from 'next/navigation'
 
 export default function LoginPage() {
