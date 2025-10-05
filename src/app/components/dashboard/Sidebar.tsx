@@ -26,7 +26,7 @@ export default function Sidebar() {
         </svg>
       </button>
 
-      {/* sidebr */}
+      
       <div className={`${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 fixed md:static top-0 left-0 h-screen w-64 bg-gray-800 transform transition-transform duration-200 ease-in-out z-40`}>
         <div className="flex flex-col h-full">
           <div className="p-6 border-b border-gray-700">

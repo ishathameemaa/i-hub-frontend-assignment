@@ -33,6 +33,31 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-500 to-purple-600 p-4">
+      {/* Test Credentials Section */}
+      <div className="hidden md:block max-w-md w-full p-8 mr-8">
+        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white">
+          <h3 className="text-2xl font-bold mb-4">Test Credentials</h3>
+          <div className="space-y-4">
+            <div className="p-4 bg-white/5 rounded-lg hover:bg-white/10 transition-colors">
+              <p className="font-semibold text-lg">Admin User</p>
+              <p className="text-white/80">Email: admin@example.com</p>
+              <p className="text-white/80">Password: password</p>
+            </div>
+            <div className="p-4 bg-white/5 rounded-lg hover:bg-white/10 transition-colors">
+              <p className="font-semibold text-lg">Employee User</p>
+              <p className="text-white/80">Email: employee@example.com</p>
+              <p className="text-white/80">Password: password</p>
+            </div>
+            <div className="p-4 bg-white/5 rounded-lg hover:bg-white/10 transition-colors">
+              <p className="font-semibold text-lg">Super Admin User</p>
+              <p className="text-white/80">Email: superadmin@example.com</p>
+              <p className="text-white/80">Password: password</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Login Form */}
       <div className="max-w-md w-full space-y-8 p-8 bg-white rounded-xl shadow-2xl transform transition-all hover:scale-[1.01]">
         <div className="text-center">
           <h2 className="text-4xl font-bold text-gray-900 mb-2">Welcome Back</h2>
