@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { UserRole } from '@/types/auth';
+import { UserRole } from '../types/auth';
 
 interface NavigationItem {
   id: string;
