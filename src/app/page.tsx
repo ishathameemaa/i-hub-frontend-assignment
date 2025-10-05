@@ -34,36 +34,45 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex flex-col md:flex-row">
       {/* Left side - Image/Brand Section */}
-      <div className="hidden md:flex md:w-1/2 bg-blue-600 text-white p-12 flex-col justify-between">
-        <div>
-          <h1 className="text-4xl font-bold mb-4">Welcome Back!</h1>
-          <p className="text-xl">Sign in to continue your journey</p>
-        </div>
-        <div className="space-y-6">
-          <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-              </svg>
-            </div>
-            <div>
-              <h3 className="font-semibold">Secure Access</h3>
-              <p className="text-sm text-blue-200">Your data is protected</p>
-            </div>
-          </div>
-          <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </div>
-            <div>
-              <h3 className="font-semibold">Fast & Efficient</h3>
-              <p className="text-sm text-blue-200">Quick access to dashboard</p>
-            </div>
-          </div>
-        </div>
+     <div className="hidden md:flex md:w-1/2 bg-blue-600 text-white p-12 flex-col justify-between">
+  <div>
+    <h1 className="text-4xl font-bold mb-4">Welcome Back!</h1>
+    <p className="text-xl mb-6">Sign in to continue your journey</p>
+
+    {/* Hints box */}
+    <div className="bg-blue-500 bg-opacity-70 p-4 rounded-lg space-y-2">
+      <h3 className="font-semibold text-lg">Login Hints:</h3>
+      <p className="text-sm">Admin: <span className="font-mono">admin@example.com</span> / <span className="font-mono">password</span></p>
+      <p className="text-sm">Employee: <span className="font-mono">employee@example.com</span> / <span className="font-mono">password</span></p>
+      <p className="text-sm">Super Admin: <span className="font-mono">superadmin@example.com</span> / <span className="font-mono">password</span></p>
+    </div>
+  </div>
+
+  <div className="space-y-6 mt-6">
+    <div className="flex items-center space-x-4">
+      <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+        </svg>
       </div>
+      <div>
+        <h3 className="font-semibold">Secure Access</h3>
+        <p className="text-sm text-blue-200">Your data is protected</p>
+      </div>
+    </div>
+    <div className="flex items-center space-x-4">
+      <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      </div>
+      <div>
+        <h3 className="font-semibold">Fast & Efficient</h3>
+        <p className="text-sm text-blue-200">Quick access to dashboard</p>
+      </div>
+    </div>
+  </div>
+</div>
 
       {/* Right side - Login Form */}
       <div className="flex-1 flex items-center justify-center p-8">
