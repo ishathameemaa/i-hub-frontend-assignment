@@ -12,7 +12,7 @@ const mockUsers = [
 export async function POST(req: NextRequest) {
   const { email, password } = await req.json();
 
-  // ✅ Find the user
+ 
   const user = mockUsers.find(u => u.email === email);
 
   if (!user || password !== "password") {
