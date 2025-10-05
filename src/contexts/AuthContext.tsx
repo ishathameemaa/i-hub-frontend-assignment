@@ -1,20 +1,28 @@
 'use client';
 
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
 
+// Define what a "user" looks like in your app
+interface User {
+  id: string;
+  name: string;
+  email: string;
+  // Add more fields if needed, like role, avatar, etc.
+}
+
 interface AuthContextType {
-  user: any;
+  user: User | null;
   token: string | null;
-  setUser: (user: any) => void;
-  setToken: (token: string) => void;
+  setUser: React.Dispatch<React.SetStateAction<User | null>>;
+  setToken: React.Dispatch<React.SetStateAction<string | null>>;
   logout: () => void;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
-  const [user, setUser] = useState<any>(null);
+export const AuthProvider = ({ children }: { children: ReactNode }) => {
+  const [user, setUser] = useState<User | null>(null);
   const [token, setToken] = useState<string | null>(null);
   const router = useRouter();
 
@@ -23,7 +31,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       const storedToken = localStorage.getItem('token');
       const storedUser = localStorage.getItem('user');
 
-      // ✅ Safely parse only valid JSON
       if (
         storedToken &&
         storedUser &&
@@ -31,7 +38,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         storedUser !== 'null'
       ) {
         setToken(storedToken);
-        setUser(JSON.parse(storedUser));
+        setUser(JSON.parse(storedUser) as User);
       } else {
         localStorage.removeItem('token');
         localStorage.removeItem('user');
@@ -61,5 +68,5 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (!context) throw new Error('useAuth must be used within AuthProvider');
-  return context;
+  return context;
 };
