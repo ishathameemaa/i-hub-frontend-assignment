@@ -8,7 +8,8 @@ export async function POST(req: NextRequest) {
 
  
 
-  if (email !== user.email || password !== "password") {
+  if (email !== "admin@example.com" || password !== "password") {
+
     return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
   }
 
